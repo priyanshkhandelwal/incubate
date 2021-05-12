@@ -1,0 +1,31 @@
+<div class="container py-3">
+    <h1>IncubateIND NodeJS Task</h1>
+    <h6>Click on the button to fetch data from server</h6>
+    <button type="button" class="btn btn-primary my-3" (click)="getdata()">Get Data</button>
+
+    <div *ngIf="isTrue">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Full Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Number</th>
+                <th scope="col">City</th>
+                <th scope="col">URL</th>
+                <th scope="col">Team Name</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let d of data | paginate: { itemsPerPage: 20, currentPage: page, totalItems: totalLength }">
+                <tr>
+                <td>{{d.full_name}}</td>
+                <td>{{d.email}}</td>
+                <td>{{d.number}}</td>
+                <td>{{d.city}}</td>
+                <td>{{d.url}}</td>
+                <td>{{d.team_name[0].team_name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>
