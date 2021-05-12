@@ -10,6 +10,6 @@ export class DataService {
   constructor(public http:HttpClient) {}
 
   getdata(){
-    return this.http.get("/list")
+    return this.http.get("api/list")
   }
 }
