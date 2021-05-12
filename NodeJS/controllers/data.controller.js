@@ -43,27 +43,3 @@ module.exports.getlist = async(req,res)=>{
 
 
 
-/* Authors.aggregate([
-        {
-            '$match': {
-              'name': authorname 
-            }
-          },
-          {
-            $lookup : {from : "books",localField:"books",foreignField:"_id",as:"books_detail"}
-          },
-          {
-            $project : {"books" : 0, "__v" : 0,"books_detail.__v" : 0 }
-          }
-
-
-      ],await function (err, result) {
-        if (err) {
-            console.log(err);
-            return;
-        }    
-        res.send(result);
-        
-    }); 
- */
-
